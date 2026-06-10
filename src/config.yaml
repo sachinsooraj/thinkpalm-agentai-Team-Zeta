@@ -1,0 +1,95 @@
+# ============================================================
+# TPOps Sentinel — Central Configuration
+# ============================================================
+# Sensitive values (tokens, webhooks) must be set via .env
+# ============================================================
+
+monitor:
+  tick_interval_seconds: 5          # How often the monitor loop evaluates metrics
+  window_seconds: 60                 # Rolling window for rate calculations
+  dry_run: false                     # Set true to skip real GitHub/Slack calls
+
+simulator:
+  enabled: true
+  requests_per_tick: 10              # Requests generated per monitor tick
+  anomaly_probability: 0.05          # Chance of injecting a spike/burst
+  burst_duration_ticks: 3            # How many ticks a burst lasts
+
+tenants:
+  - id: acme-corp
+    name: "ACME Corporation"
+    tier: enterprise
+    token_quota: 500000
+  - id: globex-ltd
+    name: "Globex Ltd"
+    tier: enterprise
+    token_quota: 400000
+  - id: initech
+    name: "Initech"
+    tier: standard
+    token_quota: 200000
+  - id: umbrella-co
+    name: "Umbrella Co"
+    tier: standard
+    token_quota: 150000
+  - id: cyberdyne
+    name: "Cyberdyne Systems"
+    tier: starter
+    token_quota: 100000
+
+services:
+  - id: llm-support
+    name: "LLM Customer Support Bot"
+    model: "gpt-4o"
+    avg_latency_ms: 800
+    latency_std_ms: 400
+    avg_tokens_input: 512
+    avg_tokens_output: 256
+    avg_tokens_std: 300
+  - id: iot-anomaly
+    name: "IoT Anomaly Detection API"
+    model: "custom-anomaly-v2"
+    avg_latency_ms: 120
+    latency_std_ms: 60
+    avg_tokens_input: 128
+    avg_tokens_output: 64
+    avg_tokens_std: 50
+
+error_categories:
+  - timeout
+  - rate_limit
+  - context_overflow
+  - model_unavailable
+  - validation_error
+  - upstream_failure
+
+thresholds:
+  latency_p95_ms: 2000
+  latency_p99_ms: 4000
+  error_rate_pct: 5.0               # % errors in rolling window
+  tokens_per_request: 3500          # Single request token cap warning
+  errors_per_minute: 10             # Per-tenant burst threshold
+
+alerting:
+  github:
+    enabled: true
+    repo: ""                        # Set via GITHUB_REPO env var (owner/repo)
+    labels:
+      - auto-raised
+    dedup_window_minutes: 30        # Don't re-raise same issue within N minutes
+
+  slack:
+    enabled: true
+    channel: "#delivery-alerts"     # Informational; actual routing via webhook
+
+digest:
+  enabled: true
+  schedule_time: "08:00"            # Daily digest generation time (24h, local tz)
+  output_dir: "reports"
+  formats:
+    - markdown
+    - pdf
+
+database:
+  path: "sentinel.db"               # SQLite file path (relative to project root)
+  max_events_in_memory: 5000        # Ring buffer cap for dashboard streaming

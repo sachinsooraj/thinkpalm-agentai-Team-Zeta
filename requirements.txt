@@ -1,0 +1,29 @@
+# TPOps Sentinel — Dependencies
+
+# Dashboard
+streamlit>=1.35.0
+streamlit-autorefresh>=1.0.1
+plotly>=5.22.0
+
+# Data & Metrics
+numpy>=1.26.0
+pandas>=2.2.0
+
+# Configuration
+pyyaml>=6.0.1
+python-dotenv>=1.0.1
+
+# Alerting
+PyGithub>=2.3.0
+slack_sdk>=3.27.0
+
+# Scheduling & Reporting
+schedule>=1.2.1
+reportlab>=4.2.0
+
+# Testing
+pytest>=8.2.0
+pytest-mock>=3.14.0
+
+# Live system monitoring
+psutil>=5.9.0
