@@ -270,10 +270,11 @@ tests/test_alerters.py   ........   PASSED
 
 ## 🎥 Demo Video
 
-> 📹 **8-Minute Walkthrough:** [Watch on Loom](#)
+> 📹 **8-Minute Walkthrough:** 
 >
 Part-1
 > Link: https://www.loom.com/share/6648472ea6f4472296677f06fbe50e9e
+> 
 Part-2
 > Link: https://www.loom.com/share/6648472ea6f4472296677f06fbe50e9e
 
