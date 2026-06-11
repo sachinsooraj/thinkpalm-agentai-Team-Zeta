@@ -27,9 +27,9 @@ Teams have no real-time visibility into:
 | Member | Role | Contributions |
 |--------|------|--------------|
 | **ThinkPalm AI Engineering Team** | Platform Lead | End-to-end system design, `sentinel/` core engine, SQLite store, rolling-window percentile calculator |
-| *(Add your name here)* | Dashboard & Reporting | Streamlit dashboard, DigestGenerator (Markdown + PDF), Plotly charts |
-| *(Add your name here)* | Alerting & Integration | GitHubAlerter (PyGithub), SlackAlerter (Block Kit), threshold deduplication logic |
-| *(Add your name here)* | QA & DevOps | Pytest test suite, `.env` configuration layer, `config.yaml` schema design |
+| *Sachin Sooraj* | Dashboard & Reporting | Streamlit dashboard, DigestGenerator (Markdown + PDF), Plotly charts |
+| *Fayiz M.A* | Alerting & Integration | GitHubAlerter (PyGithub), SlackAlerter (Block Kit), threshold deduplication logic |
+| *Sachin & Fayiz* | QA & DevOps | Pytest test suite, `.env` configuration layer, `config.yaml` schema design |
 
 > **Note:** Update names and split contributions to match your actual team before submission.
 
@@ -273,7 +273,7 @@ tests/test_alerters.py   ........   PASSED
 > 📹 **8-Minute Walkthrough:** 
 >
 Part-1
-> Link: https://www.loom.com/share/6648472ea6f4472296677f06fbe50e9e
+> Link: https://www.loom.com/share/6d78fa86c7804ea0ba55633121ffdab2
 > 
 Part-2
 > Link: https://www.loom.com/share/6648472ea6f4472296677f06fbe50e9e
