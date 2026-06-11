@@ -9,7 +9,6 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-green)](LICENSE)
 
 ---
-
 ## 📌 Problem Statement
 
 Modern AI-powered products — LLM chatbots, IoT inference APIs, recommendation engines — expose a critical operational blind spot: **once deployed, their runtime behaviour is essentially invisible.**
@@ -259,9 +258,6 @@ tests/test_alerters.py   ........   PASSED
 ### Streamlit Dashboard — Token Usage & Error Analysis
 ![Dashboard Token & Errors](docs/screenshots/dashboard-tokens.png)
 
-### Automated Alert — GitHub Issue Auto-Raised
-![GitHub Alert](docs/screenshots/github-alert.png)
-
 ### Automated Alert — Slack Block Kit Message
 ![Slack Alert](docs/screenshots/slack-alert.png)
 
@@ -274,54 +270,18 @@ tests/test_alerters.py   ........   PASSED
 
 ## 🎥 Demo Video
 
-> 📹 **5-Minute Walkthrough:** [Watch on Loom / YouTube](#)
+> 📹 **8-Minute Walkthrough:** [Watch on Loom](#)
 >
-> *(Replace `#` above with your Loom or YouTube link before submission)*
+Part-1
+> Link: https://www.loom.com/share/6648472ea6f4472296677f06fbe50e9e
+Part-2
+> Link: https://www.loom.com/share/6648472ea6f4472296677f06fbe50e9e
 
 The demo covers:
 1. Starting the monitor in `--dry-run` mode and observing live traffic simulation
 2. A threshold breach being detected and an alert payload being generated
 3. Launching the Streamlit dashboard and touring all four panels
 4. Generating the daily PDF digest report
-
----
-
-## 🎬 Demo Walkthrough Script
-
-Use this as a step-by-step script for a live presentation:
-
-### Step 1: Start the Monitor
-Open Terminal 1 and run the simulator:
-```bash
-source venv/bin/activate
-python3 src/run_monitor.py --dry-run
-```
-*Point out the live tick table — token counts and error rates updating every 5 s.*
-
-### Step 2: Observe a Breach Alert
-Within ~30 seconds, the `TrafficSimulator` injects an anomaly. You will see:
-```
-  ⚠️  1 BREACH(ES)!
-  [DRY-RUN] GitHub Issue payload: 🔴 [CRITICAL] Latency P99 breach — tenant: acme-corp
-  [DRY-RUN] Slack Block Kit payload sent to #ai-ops-alerts
-```
-
-### Step 3: Launch the Dashboard
-Open Terminal 2:
-```bash
-source venv/bin/activate
-python3 -m streamlit run src/dashboard.py
-```
-*Browser opens at http://localhost:8501 — tour each panel.*
-
-### Step 4: Generate the Digest
-Stop the monitor (`Ctrl+C`), then:
-```bash
-python3 src/run_monitor.py --digest-now
-```
-*Open `reports/digest_YYYY-MM-DD.pdf` — show the executive summary and SLA compliance table.*
-
----
 
 ## 🔔 Alert Channels
 
